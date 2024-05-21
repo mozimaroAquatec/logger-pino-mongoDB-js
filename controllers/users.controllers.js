@@ -56,7 +56,7 @@ const getUsers = async function (req, res) {
         // Handle errors
         res.status(500).json(new error_handler_1.default(500, "Internal server error"));
         logging_1.usersLoggers.error(error, `get users error: ${error}`);
-        // throw new ErrorResponse(500, `getUsers : ${error}`);
+        throw new error_handler_1.default(500, `getUsers : ${error}`);
     }
 };
 exports.getUsers = getUsers;
